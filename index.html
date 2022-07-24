@@ -19,17 +19,21 @@
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
-            <!-- v-show -> Used for toggling element's visibility -->
-            <!-- v-show -> Appropiated for modals for example -->
-            <!-- v-show -> display: none -->
-            <p v-if="inventary > 10">In Stock</p>
-            <p v-else-if="inventary <= 10 && inventary > 0">Almost sold out!</p>
-            <p v-else>Out of Stock</p>
-            <!-- You don't need to pair it with v-else (It's not an obrigation pair)-->
 
-            <p v-if="sale">On sale</p>
-            <p v-else>Off sale</p>
+            <p v-if="inStock">In Stock</p>
+            <p v-else>Out of Stock</p>
+
+            <ul>
+              <li v-for="detail in details">{{ detail }}</li>
+              <!-- v-for="alias in arrayListInData" -->
+              <!-- The v-for loop is a loop that will pass for each element -->
+            </ul>
+
+            <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
+            <!-- key -> gives each DOM element a unique key -->
           </div>
+
+          <div v-for="(size, index) in sizes" v:key="index">{{ size }}</div>
         </div>
       </div>
     </div>
