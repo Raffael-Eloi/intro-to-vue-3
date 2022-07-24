@@ -36,14 +36,24 @@ app.component('product-display', {
         </div>
 
         <!-- <button class="button" v-on:click="cart += 1">Add to Cart</button> -->
-        <button
-          class="button"
-          :class="{disabledButton: !inStock}"
-          v-on:click="addToCart"
-          :disabled="!inStock"
-        >
-          Add to Cart
-        </button>
+        <div style="display: flex">
+          <button
+            class="button"
+            :class="{disabledButton: !inStock}"
+            v-on:click="addToCart"
+            :disabled="!inStock"
+          >
+            Add to cart
+          </button>
+          <button
+            class="button"
+            :class="{disabledButton: !inStock}"
+            v-on:click="removeToCart"
+            :disabled="!inStock"
+          >
+            Remove cart
+          </button>
+        </div>
       </div>
     </div>
   </div>`,
@@ -63,7 +73,11 @@ app.component('product-display', {
   },
   methods: {
     addToCart() {
-      this.cart += 1;
+      this.$emit('add-to-cart', this.variants[this.selectedVariant].id);
+    },
+    
+    removeToCart() {
+      this.$emit('remove-to-cart');
     },
 
     updateVariant(index) {
