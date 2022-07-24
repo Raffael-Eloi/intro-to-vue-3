@@ -17,11 +17,6 @@ const app = Vue.createApp({
       this.cart += 1;
     },
 
-    removeToCart() {
-      if (this.cart - 1 < 0) alert("You don't have any cart to remove");
-      else this.cart -= 1;
-    },
-
     updateImage(variantImage) {
       this.image = variantImage;
     }
