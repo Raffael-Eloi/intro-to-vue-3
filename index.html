@@ -10,10 +10,21 @@
   </head>
   <body>
     <div id="app">
-      <h1>Product goes here</h1>
+      <h1>{{ product }}</h1>
+      <!-- The double mustache allows to access the data propriets-->
+      <!-- Inside the double mustache you can run valid javascript -->
+      <!-- Everytime that the "product" propiety changes, the template also change. 
+        It happens due the vue reactivity  system.
+      -->
+      <p>{{ description }}</p>
     </div>
 
-    <!-- Import Js -->
+    <!-- Import App -->
     <script src="./main.js"></script>
+    
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app');
+    </script>
   </body>
 </html>
