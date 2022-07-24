@@ -16,12 +16,19 @@
         <div class="product-container">
           <div class="product-image">
             <img v-bind:src="image" alt="">
-            <!-- v-bind : Dinamically bind an attribute to an expression -->
-
-            <a :href="url" target="_blank">Mady by Vue Mastery</a>
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
+            <!-- v-show -> Used for toggling element's visibility -->
+            <!-- v-show -> Appropiated for modals for example -->
+            <!-- v-show -> display: none -->
+            <p v-if="inventary > 10">In Stock</p>
+            <p v-else-if="inventary <= 10 && inventary > 0">Almost sold out!</p>
+            <p v-else>Out of Stock</p>
+            <!-- You don't need to pair it with v-else (It's not an obrigation pair)-->
+
+            <p v-if="sale">On sale</p>
+            <p v-else>Off sale</p>
           </div>
         </div>
       </div>
