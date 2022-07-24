@@ -1,10 +1,12 @@
-# intro-to-vue-3
+# Socks Store - An introduction to Vue 3
 
 ## Desktop Preview 🖥️
 ![intro-vue-3-desktop](https://user-images.githubusercontent.com/51720161/180659981-bc512f12-a7a3-4e87-a468-b7002c27243c.gif)
 
 ## Mobile Preview 📱
 ⚠️ WIP (Working in Progress) ⚠️
+
+## You can access the application [here](https://raffael-eloi.github.io/intro-to-vue-3/) 
 
 ## Description 
 A representation of a online store selling socks where you can choose the color, add and remove to the card and let a review.
