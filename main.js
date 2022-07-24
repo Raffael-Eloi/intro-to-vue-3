@@ -1,11 +1,9 @@
-/* It's the heart of the vue application */
 const app = Vue.createApp({
-  data () {
+  data() {
     return {
       product: 'Socks',
-      description: 'An amazing product build with Vue app',
+      image: './assets/images/socks_green.jpg',
+      url: 'https://www.vuemastery.com/'
     }
   }
 })
-
-/* When is created the createApp you must to pass an options or at least a empty object */
