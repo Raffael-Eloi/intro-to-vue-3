@@ -11,6 +11,8 @@
   <body>
     <div id="app">
       <div class="nav-bar"></div>
+
+      <div class="cart">Cart({{ cart }})</div>
       
       <div class="product-display">
         <div class="product-container">
@@ -25,15 +27,16 @@
 
             <ul>
               <li v-for="detail in details">{{ detail }}</li>
-              <!-- v-for="alias in arrayListInData" -->
-              <!-- The v-for loop is a loop that will pass for each element -->
             </ul>
 
-            <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
-            <!-- key -> gives each DOM element a unique key -->
-          </div>
+            <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">
+              {{ variant.color }}
+            </div>
 
-          <div v-for="(size, index) in sizes" v:key="index">{{ size }}</div>
+            <!-- <button class="button" v-on:click="cart += 1">Add to Cart</button> -->
+            <button class="button" v-on:click="addToCart">Add to Cart</button>
+            <button class="button" v-on:click="removeToCart">Remove Cart</button>
+          </div>
         </div>
       </div>
     </div>
